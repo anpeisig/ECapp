@@ -33,7 +33,8 @@ def view():
     output_file=calculadora(df)
     #output_file = "test2.docx"
     # Return HTML snippet that will render the table
-    return output_file.to_html()
+    #return output_file.to_html()
+    return redirect(url_for('download'))
     #return render_template('Default.htm')
 
 @app.route('/download')
