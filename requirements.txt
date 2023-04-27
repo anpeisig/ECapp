@@ -4,3 +4,4 @@ openpyxl
 Plotly
 Kaleido
 gunicorn
+Python-docx
