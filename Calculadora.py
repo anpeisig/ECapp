@@ -612,7 +612,6 @@ def calculadora(df):
             title = {'text': diccionario_variables[indicador]}))
         filename='images/'+indicador+'.png'
         fig.write_image(filename)
-        save_file_git(filename)
         return filename
       
 
