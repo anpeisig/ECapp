@@ -3,15 +3,34 @@
  
 <head>
     <title>Upload/View Excel</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap');
+        body {font-family: 'Poppins',Helvetica,Arial,Lucida,sans-serif;}
+        .container {position: absolute; top: 0; right: 0; bottom: 0; left: 0; align-items: center; display:flex; justify-content:center; /*background-image: linear-gradient(to top right,#bf7a6b 0%, #e6d8a7 100%);*/ flex-direction: column;}
+        .titulo {text-align:center; position:relative;  width:90%;  margin:2% auto 0%; color: #003e5c;}
+        .form { width: 400px; }
+        .file-upload-wrapper { position: relative; width: 100%; height: 60px; text-align-last: center;}
+        input[type=file]::file-selector-button {margin-right: 15px; border: none; background: #3ea843; padding: 15px 20px; border-radius: 10px; color: #fff; cursor: pointer; transition: background .2s ease-in-out; }
+        input[type=file]::file-selector-button:hover {background: #109110;}
+        .file-block {width: 350px; max-width: 100%; color: #444; padding: 5px; background: #fff; border-radius: 10px; border: 1px solid #555; }
+        input[type=submit] {margin-right: 15px; border: none; background: #fcc520; padding: 15px 25px; border-radius: 10px; color: #fff; cursor: pointer; transition: background .2s ease-in-out; }
+        input[type=submit]:hover {background: #d2a008;}
+    </style>
 </head>
  
 <body>
-    <h1>Upload Excel File (.xlsx)</h1>
-    <form action="{{ url_for('view') }}" method="post" enctype="multipart/form-data">
-        <input type="file" name="file"
-            accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
-        <input type="submit" value="Upload">
-    </form>
+    <div class="container">
+        <div class="titulo">
+        <h1>Sube tu archivo Excel (.xlsx)</h1>
+        </div>
+        <div class="file-upload-wrapper">
+            <form action="{{ url_for('view') }}" method="post" enctype="multipart/form-data">
+                <input class="file-block" type="file" name="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
+                <input type="submit" value="Subir">
+            </form>
+        </div>
+    </div>
 </body>
  
 </html>
+
